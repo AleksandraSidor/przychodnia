@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/my.js"></script>
+  <script src="https://kit.fontawesome.com/ad95a8dfe1.js" crossorigin="anonymous"></script>
+  <title>Lista Lekarzy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
+
+    #headerFirst {
+      background-color:#7EADAF;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: 100%;
+    }
+
+    #headerFirst a{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 15px;
+    }
+
+    #headerFirst a p{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 0px;
+      display: inline-block;
+      position: relative;
+
+    }
+
+    #headerFirst a p::after {
+      content: "";
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0;
+      transition: 0.2s;
+    }
+
+    #headerFirst a p:hover::after,
+    #headerFirst a p:focus::after {
+      background-color: white;
+      width: 100%;
+    }
+
+    #headerSecond {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #headerSecond a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 5px;
+      margin-top: 10px;
+      border-top: 1px solid #7EADAF;
+      background-color: white;
+      border-bottom: 1px solid #7EADAF;
+      text-align: center;
+    }
+
+    nav button {
+      text-decoration: none;
+      color: #7EADAF;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+      background-color: white;
+      border: 1px solid #7EADAF;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    nav button:hover {
+       background-color: #7EADAF;
+       color: white;
+       border: 2x solid #7EADAF
+    }
+
+    #doctorsButton {
+       background-color: #7EADAF;
+       color: white;
+       border: 2x solid #7EADAF
+    }
+
+    .container {
+      max-width: 70%;
+      margin: 30px auto;
+      padding: 20px 20px;
+      background-color: #fcfcfc;
+      border-radius: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .specialization-filter {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #7EADAF;
+      color: #fff;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:last-child {
+        margin-bottom: 20px
+    }
+
+    .doctor:hover {
+      background-color: #e0e0e0;
+    }
+
+    #contactTitle {
+      margin-top: 50px;
+      margin-left: 30px;
+    }
+
+    #contact {
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .fa {
+      margin-right: 10px
+    }
+
+    footer {
+      background-color: #393636;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      height: 30px
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="row-header-top center" id="headerFirst">
+          <a href="main.html">
+           <p>Strona główna</p>
+          </a>
+        </div>
+        <div class="row-header-top center" id="headerSecond">
+          <a href="main.html">
+            <img src = "logo2.png" alt="logo apteki przekierowujące na stronę główną" width ="70%">
+          </a>
+        </div>
+      </header>
+      <nav>
+        <button class="button" onclick="document.location.href='about.html'">O nas</button>
+        <button class="button" onclick="document.location.href='services.html'">Usługi</button>
+        <button class="button" id="doctorsButton" onclick="document.location.href='doctors.html'">Lekarze</button>
+        <button class="button" onclick="document.location.href='#contact'">Kontakt</button>
+      </nav>
+  <div class="container">
+    <h1>Lista Lekarzy</h1>
+    <div class="specialization-filter">
+      <label for="specialization">Wybierz specjalizację:</label>
+      <select id="specialization">
+        <option value="all">Wszystkie specjalizacje</option>
+        <option value="pediatra">Pediatra</option>
+        <option value="internista">Internista</option>
+        <option value="dietetyk">Dietetyk</option>
+        <option value="dermatolog">Dermatolog</option>
+        <option value="ortopeda">Ortopeda</option>
+      </select>
+    </div>
+    <table id="doctors-table">
+      <thead>
+        <tr>
+          <th>Imię i Nazwisko</th>
+          <th>Specjalizacja</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="doctor pediatra">
+          <td>Dr. Anna Nowak</td>
+          <td>Pediatra</td>
+        </tr>
+        <tr class="doctor internista">
+          <td>Dr. Jan Kowalski</td>
+          <td>Internista</td>
+        </tr>
+        <tr class="doctor dermatolog">
+          <td>Dr. Maria Wiśniewska</td>
+          <td>Dermatolog</td>
+        </tr>
+        <tr class="doctor ortopeda">
+          <td>Dr. Piotr Nowakowski</td>
+          <td>Ortopeda</td>
+        </tr>
+        <tr class="doctor dietetyk">
+          <td>Dr. Jacek Lewandowski</td>
+          <td>Dietetyk</td>
+        </tr>
+        <tr class="doctor dietetyk">
+          <td>Dr. Katarzyna Bąk</td>
+          <td>Dietetyk</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="contact">
+  <div id="contactTitle">
+    <h2>Kontakt</h2>
+  </div>
+    <div class="contact-info">
+      <div class="col">
+        <p><i class="fa fa-home" aria-hidden="true"></i> 02-232 Warszawa, Zdrowotna 1</p>
+      </div>
+
+      <div class="col">
+        <p><i class="fa fa-envelope" aria-hidden="true"></i> przychodniamedyczna@buziaczek.pl</p>
+      </div>
+
+      <div class="col">
+        <p><i class="fa fa-phone" aria-hidden="true"></i> +48 122233440</p>
+      </div>
+
+      <div class="col">
+        <p><i class="fa fa-print" aria-hidden="true"></i>  +48 22 111 09 00</p>
+      </div>
+    </div>
+</section>
+</div>
+<footer>
+  <p>&copy; 2024 Przychodnia Medyczna Copywright</p>
+</footer>
+
+  <script>
+    const specializationFilter = document.getElementById('specialization');
+    const rows = document.querySelectorAll('#doctors-table tbody tr');
+
+    specializationFilter.addEventListener('change', (event) => {
+      const selectedSpecialization = event.target.value;
+
+      rows.forEach((row) => {
+        if (selectedSpecialization === 'all' || row.classList.contains(selectedSpecialization)) {
+          row.style.display = 'table-row';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/my.js"></script>
+  <script src="https://kit.fontawesome.com/ad95a8dfe1.js" crossorigin="anonymous"></script>
+  <title>Przychodnia Medyczna</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #headerFirst {
+      background-color:#7EADAF;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: 100%;
+    }
+
+    #headerFirst a{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 15px;
+    }
+
+    #headerFirst a p{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 0px;
+      display: inline-block;
+      position: relative;
+
+    }
+
+    #headerFirst a p::after {
+      content: "";
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0;
+      transition: 0.2s;
+    }
+
+    #headerFirst a p:hover::after,
+    #headerFirst a p:focus::after {
+      background-color: white;
+      width: 100%;
+    }
+
+    #headerSecond {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #headerSecond a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 5px;
+      margin-top: 10px;
+      border-top: 1px solid #7EADAF;
+      background-color: white;
+      border-bottom: 1px solid #7EADAF;
+      text-align: center;
+    }
+
+    nav button {
+      text-decoration: none;
+      color: #7EADAF;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+      background-color: white;
+      border: 1px solid #7EADAF;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    nav button:hover {
+       background-color: #7EADAF;
+       color: white;
+       border: 2x solid #7EADAF
+    }
+
+    #servicesButton {
+       background-color: #7EADAF;
+       color: white;
+       border: 2x solid #7EADAF
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .service {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #7EADAF;
+      border-radius: 30px;
+      color:#393636
+    }
+
+    .service h2 {
+      margin-top: 0;
+    }
+
+    .service p {
+      margin-bottom: 0;
+    }
+
+    #contactTitle {
+      margin-top: 50px;
+      margin-left: 10px;
+    }
+
+    #contact {
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .fa {
+      margin-right: 10px
+    }
+
+    footer {
+      background-color: #393636;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      height: 30px
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="row-header-top center" id="headerFirst">
+      <a href="main.html">
+       <p>Strona główna</p>
+      </a>
+    </div>
+    <div class="row-header-top center" id="headerSecond">
+      <a href="main.html">
+        <img src = "logo2.png" alt="logo apteki przekierowujące na stronę główną" width ="70%">
+      </a>
+    </div>
+  </header>
+  <nav>
+    <button class="button" onclick="document.location.href='about.html'">O nas</button>
+    <button class="button" id="servicesButton" onclick="document.location.href='#services'">Usługi</button>
+    <button class="button" onclick="document.location.href='doctors.html'">Lekarze</button>
+    <button class="button" onclick="document.location.href='#contact'">Kontakt</button>
+  </nav>
+  <div class="container">
+    <section id="konsultacje" class="service">
+        <h2>Konsultacje lekarskie</h2>
+        <p>Zapewnij sobie szybki dostęp do porady medycznej od profesjonalnych lekarzy, bez konieczności wychodzenia z domu. 
+            Nasza usługa konsultacji lekarskich online umożliwia elastyczne umówienie się na wizytę, podczas której otrzymasz fachową opiekę i zalecenia dotyczące Twojego zdrowia. 
+            Skorzystaj z profesjonalnej opieki medycznej już dziś i dbaj o swoje zdrowie z wygodą!</p>
+      </section>
+      <section id="badania" class="service">
+        <h2>Badania diagnostyczne</h2>
+        <p>W naszej przychodni medycznej oferujemy więcej niż tylko badania. Oferujemy klucz do zrozumienia Twojego organizmu i zapewniamy Ci spokój umysłu. 
+            Dzięki najnowocześniejszym technologiom diagnostycznym i doświadczonemu personelowi medycznemu, prowadzimy kompleksową analizę Twojego zdrowia. 
+            Skorzystaj z naszych badań diagnostycznych, aby zidentyfikować potencjalne zagrożenia i zacząć żyć pełnią życia!</p>
+      </section>
+      <section id="porady" class="service">
+        <h2>Porady dietetyczne</h2>
+        <p>W naszej przychodni medycznej nie tylko dbamy o leczenie, ale również o profilaktykę i utrzymanie zdrowego trybu życia. 
+            Nasz zespół doświadczonych dietetyków oferuje spersonalizowane porady żywieniowe, dopasowane do Twoich indywidualnych potrzeb i celów zdrowotnych. 
+            Oferujemy wsparcie w zakresie zdrowego odżywiania, planowania posiłków oraz zmiany nawyków żywieniowych, abyś mógł osiągnąć i utrzymać swoje cele zdrowotne.</p>
+      </section>
+      <section id="obrazowanie" class="service">
+        <h2>Obrazowanie medyczne</h2>
+        <p>Zapewniamy dostęp do zaawansowanych badań obrazowych, które pomagają dokładnie zdiagnozować różne schorzenia. 
+            Dzięki nowoczesnemu sprzętowi i doświadczonemu personelowi medycznemu możemy zapewnić szybkie i precyzyjne badania, takie jak tomografia komputerowa (TK), rezonans magnetyczny (MRI), czy ultrasonografia. 
+            Skorzystaj z naszych usług obrazowania medycznego, aby uzyskać dokładną diagnozę i rozpocząć odpowiednie leczenie.</p>
+      </section>
+      <section id="contact">
+        <div id="contactTitle">
+          <h2>Kontakt</h2>
+        </div>
+          <div class="contact-info">
+            <div class="col">
+              <p><i class="fa fa-home" aria-hidden="true"></i> 02-232 Warszawa, Zdrowotna 1</p>
+            </div>
+      
+            <div class="col">
+              <p><i class="fa fa-envelope" aria-hidden="true"></i> przychodniamedyczna@buziaczek.pl</p>
+            </div>
+      
+            <div class="col">
+              <p><i class="fa fa-phone" aria-hidden="true"></i> +48 122233440</p>
+            </div>
+      
+            <div class="col">
+              <p><i class="fa fa-print" aria-hidden="true"></i>  +48 22 111 09 00</p>
+            </div>
+          </div>
+      </section>
+  </div>
+  <footer>
+    <p>&copy; 2024 Przychodnia Medyczna Copywright</p>
+  </footer>
+</body>
+
+</html>

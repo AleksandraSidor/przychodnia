@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/my.js"></script>
+  <script src="https://kit.fontawesome.com/ad95a8dfe1.js" crossorigin="anonymous"></script>
+  <title>Przychodnia Medyczna</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #headerFirst {
+      background-color:#7EADAF;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: 100%;
+    }
+
+    #headerFirst a{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 15px;
+    }
+
+    #headerFirst a p{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 0px;
+      display: inline-block;
+      position: relative;
+
+    }
+
+    #headerFirst a p::after {
+      content: "";
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0;
+      transition: 0.2s;
+    }
+
+    #headerFirst a p:hover::after,
+    #headerFirst a p:focus::after {
+      background-color: white;
+      width: 100%;
+    }
+
+    #headerSecond {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #headerSecond a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 5px;
+      margin-top: 10px;
+      border-top: 1px solid #7EADAF;
+      background-color: white;
+      border-bottom: 1px solid #7EADAF;
+      text-align: center;
+    }
+
+    nav button {
+      text-decoration: none;
+      color: #7EADAF;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+      background-color: white;
+      border: 1px solid #7EADAF;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    nav button:hover {
+       background-color: #7EADAF;
+       color: white;
+       border: 2x solid #7EADAF
+    }
+
+    #aboutButton {
+       background-color: #7EADAF;
+       color: white;
+       border: 2x solid #7EADAF
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    .service {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #7EADAF;
+      border-radius: 30px;
+      color:#393636
+    }
+
+    .service h2 {
+      margin-top: 0;
+    }
+
+    .service p {
+      margin-bottom: 0;
+    }
+
+    #contactTitle {
+      margin-top: 50px;
+      margin-left: 10px;
+    }
+
+    #contact {
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .fa {
+      margin-right: 10px
+    }
+
+    footer {
+      background-color: #393636;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      height: 30px
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="row-header-top center" id="headerFirst">
+      <a href="main.html">
+       <p>Strona główna</p>
+      </a>
+    </div>
+    <div class="row-header-top center" id="headerSecond">
+      <a href="main.html">
+        <img src = "logo2.png" alt="logo apteki przekierowujące na stronę główną" width ="70%">
+      </a>
+    </div>
+  </header>
+  <nav>
+    <button class="button" id="aboutButton" onclick="document.location.href='about.html'">O nas</button>
+    <button class="button" onclick="document.location.href='services.html'">Usługi</button>
+    <button class="button" onclick="document.location.href='doctors.html'">Lekarze</button>
+    <button class="button" onclick="document.location.href='#contact'">Kontakt</button>
+  </nav>
+  <div class="container">
+    <section id="konsultacje" class="service">
+        <h2>O stronie</h2>
+        <p>Niniejsza strona jest stroną internetową przychodni medycznej. Pozwala użytkownikowi na zapoznanie się z ugługami oferowanymi przez przychodnie oraz na znalezienie lekarzy 
+            świadczących usługi medyczne w tej placówce.
+        </p>
+        <br>
+        <h3>Użyte technologie</h3>
+        <p>Aby zapewnić stronie atrakcyjny wygląd oraz czytelność i dostępność, strona została stworzona głównie z wykorzystaniem języka do strukturyzacji zawartości strony HTML
+             oraz języka CSS do opisu formy prezentacji elementów na stronie. Do interaktywnych elementów, tj. filtrowanie tabeli z lekarzami, wykorzystany został język JavaScript. 
+             Dzięki niemu, użytkownik jest w stanie modyfikować zawartość wyświetlanej strony.
+        </p>
+        <br>
+        <h3>Nawigacja</h3>
+        <p>Nawigacja po aplikacji webowej została umieszczona w widocznym miejscu - w górnej części każdej ze stron. Znajduje się tam pasek nawigacyjny z przyciskami przekierowującymi na konkretne podstrony serwisu.
+            W momencie otwarcia konkretnej strony, przycisk jej odpowiadający zakolorowywany jest na inny niz pozostałe kolor. Dzięki czemu, użytkownik wie, w której dokładnie części serwisu jest.
+            Przekierowanie do strony głownej ukryte jest w dwóch miejscach. Pierwszym z nich jest samo logo przychodni medycznej. Drugim miejscem, pozawalającym na powrót do strony głownej, jest link 'Strona główna'
+            umieszczony w prawnym górnym roku każdej ze stron.
+        </p>
+        <br>
+        <h3>Wymagania projektu</h3>
+        <p>Niniejsza strona spełnia wszystkie wymagania projektu. Napisana została w języku HTML, a wygląd i zachowanie elementów zostało ozdobione z wykorzystaniem CSS. Dzięki temu, strona ma atrakcyjny wygląd
+            oraz jest intuicyjna, dzięki łatwej i przejrzystej nawigacji. Dodatkowo, strona jest spójna, kolory są stonowane, nie ma w niej żadnych gwałtownych animacji, co czyni ją również dostępną dla osób
+            z niepełnosprawnościami. Ponadto, aplikacja nie zawiera wielu obrazków lub zdjęć, jednak każde z nich ma alternatywny opis pozwalający na odczytanie go przez czytnik imersyjny.
+        </p>
+        <p>Aplikacja napisana została bez wykorzystywania szczególnych bibliotek, przez co jest obsługiwana przez wszytskie przeglądarki.</p>
+        <p>Oprócz czystego HTML i CSS, aplikacja zawiera skrypt po stronie klienta napisany w języku JavaScript. Skrypt obsługiwany jest w podstronie wyświetlającej lekarzy pracujących w placówce medycznej.
+            Użytkownik filtrując lekarzy po ich specjalności (z wykrozystanie dropdowna), jest w stanie dynamicznie zmieniać zawartość wyświetlanej strony.
+        </p>
+      </section>
+      <section id="contact">
+        <div id="contactTitle">
+          <h2>Kontakt</h2>
+        </div>
+          <div class="contact-info">
+            <div class="col">
+              <p><i class="fa fa-home" aria-hidden="true"></i> 02-232 Warszawa, Zdrowotna 1</p>
+            </div>
+      
+            <div class="col">
+              <p><i class="fa fa-envelope" aria-hidden="true"></i> przychodniamedyczna@buziaczek.pl</p>
+            </div>
+      
+            <div class="col">
+              <p><i class="fa fa-phone" aria-hidden="true"></i> +48 122233440</p>
+            </div>
+      
+            <div class="col">
+              <p><i class="fa fa-print" aria-hidden="true"></i>  +48 22 111 09 00</p>
+            </div>
+          </div>
+      </section>
+  </div>
+  <footer>
+    <p>&copy; 2024 Przychodnia Medyczna Copywright</p>
+  </footer>
+</body>
+
+</html>

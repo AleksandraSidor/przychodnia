@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/js/my.js"></script>
+  <script src="https://kit.fontawesome.com/ad95a8dfe1.js" crossorigin="anonymous"></script>
+  <title>Przychodnia Medyczna</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    #headerFirst {
+      background-color:#7EADAF;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: 100%;
+    }
+
+    #headerFirst a{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 15px;
+    }
+
+    #headerFirst a p{
+      color: white;
+      text-decoration: none;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-right: 0px;
+      display: inline-block;
+      position: relative;
+
+    }
+
+    #headerFirst a p::after {
+      content: "";
+      background-color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 0;
+      transition: 0.2s;
+    }
+
+    #headerFirst a p:hover::after,
+    #headerFirst a p:focus::after {
+      background-color: white;
+      width: 100%;
+    }
+
+    #headerSecond {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #headerSecond a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      background-color: #f4f4f4;
+      padding: 5px;
+      margin-top: 10px;
+      border-top: 1px solid #7EADAF;
+      background-color: white;
+      border-bottom: 1px solid #7EADAF;
+      text-align: center;
+    }
+
+    nav button {
+      text-decoration: none;
+      color: #7EADAF;
+      padding: 10px 20px;
+      transition: background-color 0.3s;
+      background-color: white;
+      border: 1px solid #7EADAF;
+      border-radius: 16px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    nav button:hover {
+       background-color: #7EADAF;
+       color: white;
+       border: 2x solid #7EADAF
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .services-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .services-list li {
+      background: rgb(255,255,255);
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(190,214,215,1) 100%);
+      padding: 10px 20px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    #servicesTitle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+      margin-left: 10px
+    }
+
+    #serivcesMore {
+      text-decoration: none;
+      color: #393636;
+      font-size: 17px;
+      display: inline-block;
+      position: relative;
+    }
+
+    #serivcesMore::after {
+      content: "";
+      background-color: #393636;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      transition: 0.2s;
+    }
+
+    #serivcesMore:hover::after,
+    #serivcesMore:focus::after {
+      background-color: #393636;
+      width: 100%;
+    }
+
+    .arrow {
+      border: solid #393636;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+
+    #contactTitle {
+      margin-top: 50px;
+      margin-left: 10px;
+    }
+
+    #contact {
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      margin-left: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .fa {
+      margin-right: 10px
+    }
+
+    footer {
+      background-color: #393636;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      height: 30px
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="row-header-top center" id="headerFirst">
+      <a href="main.html">
+       <p>Strona główna</p>
+      </a>
+    </div>
+    <div class="row-header-top center" id="headerSecond">
+      <a href="main.html">
+        <img src = "logo2.png" alt="logo apteki przekierowujące na stronę główną" width ="70%">
+      </a>
+    </div>
+  </header>
+  <nav>
+    <button class="button" onclick="document.location.href='about.html'">O nas</button>
+    <button class="button" onclick="document.location.href='services.html'">Usługi</button>
+    <button class="button" onclick="document.location.href='doctors.html'">Lekarze</button>
+    <button class="button" onclick="document.location.href='#contact'">Kontakt</button>
+  </nav>
+  <div class="container">
+    <section id="photo">
+
+          <img src="slajd1.jpg" alt="Zdjęcie tabletek" class="about-image" width="100%">
+      
+  </section>
+  <section id="services">
+    <div id="servicesTitle">
+      <h2>Usługi</h2>
+      <a href="services.html" id="serivcesMore">Dowiedz się więcej <i class="arrow right"></i></a>
+    </div>
+    <ul class="services-list">
+        <li>Konsultacje lekarskie</li>
+        <li>Badania diagnostyczne</li>
+        <li>Porady dietetyczne</li>
+        <li>Obrazowanie medyczne</li>
+    </ul>
+</section>
+  <section id="contact">
+    <div id="contactTitle">
+      <h2>Kontakt</h2>
+    </div>
+      <div class="contact-info">
+        <div class="col">
+          <p><i class="fa fa-home" aria-hidden="true"></i> 02-232 Warszawa, Zdrowotna 1</p>
+        </div>
+  
+        <div class="col">
+          <p><i class="fa fa-envelope" aria-hidden="true"></i> przychodniamedyczna@buziaczek.pl</p>
+        </div>
+  
+        <div class="col">
+          <p><i class="fa fa-phone" aria-hidden="true"></i> +48 122233440</p>
+        </div>
+  
+        <div class="col">
+          <p><i class="fa fa-print" aria-hidden="true"></i>  +48 22 111 09 00</p>
+        </div>
+      </div>
+  </section>
+  </div>
+  <footer>
+    <p>&copy; 2024 Przychodnia Medyczna Copywright</p>
+  </footer>
+</body>
+
+</html>
